@@ -1,0 +1,15 @@
+# export PROJECT_ID=$(gcloud info --format='value(config.project)')
+# gsutil cp gs://${PROJECT_ID}/echo-web.tar.gz .
+# tar -xvzf echo-web.tar.gz
+#
+# docker build -t echo-app:v1 .
+# docker tag echo-app:v1 gcr.io/${PROJECT_ID}/echo-app:v1
+# docker push gcr.io/${PROJECT_ID}/echo-app:v1
+#
+# gcloud container clusters get-credentials echo-cluster
+#
+# ubectl run echo-app --image=gcr.io/${PROJECT_ID}/echo-app:v1 --port 8000
+#
+# ubectl expose deployment echo-app --name echo-web --type="LoadBalancer" --type LoadBalancer --port 80 --target-port 8000
+#
+# kubectl get service
